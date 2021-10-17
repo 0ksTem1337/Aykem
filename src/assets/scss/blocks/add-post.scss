@@ -1,0 +1,112 @@
+.add-post {
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 1.5rem 2.5rem (rgba($black, .5));
+    border-radius: .5rem;
+    
+    @include breakpoint($mobile-bp) {
+        padding: 1.5rem;
+    }
+}
+
+.add-post__form {
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+}
+
+.add-post__textarea {
+    display: block;
+    flex-grow: 1;
+    height: 4rem;
+//  height: 2.6rem;
+    overflow: hidden;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: $white;
+    
+    &::placeholder {
+        color: #D2D2D2;
+    }
+}
+
+.add-post__form-actions {
+    width: 12rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    
+    @include breakpoint($mobile-bp) {
+        width: 9rem;
+    }
+}
+
+.add-post__file,
+.add-post__send {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    transition: background-color .2s linear;
+    
+    @include breakpoint($mobile-bp) {
+        width: 3.4rem;
+        height: 3.4rem;
+    }    
+}
+
+.add-post__file {
+    margin: 0 .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    background-color: #fff;
+    border: 1px solid #e8ecee;
+    transition: background 0.2s linear;
+    
+    input {
+        display: none;
+    }
+    
+    @include breakpoint($mobile-bp) {
+        width: 3.4rem;
+        height: 3.4rem;
+    }    
+}
+
+.add-post__file:hover {
+    background-color: #e8ecee;
+}
+
+.add-post__file:hover .add-post__file-icon {
+    fill: $black;
+}
+
+.add-post__file-icon {
+    display: block;
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+    fill: #c6cacc;
+    transition: fill 0.5s linear;
+    
+    @include breakpoint($mobile-bp) {
+        margin: .5rem;
+    }    
+}
+
+.add-post__send {
+    background: $mint;
+    
+    &:hover {
+        background-color: darken($mint, 5%);
+    }
+}

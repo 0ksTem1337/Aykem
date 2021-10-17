@@ -1,0 +1,174 @@
+---
+layout: default
+title: 0ks | Home
+---
+
+<div class="stories">
+    <div class="stories__item" data-modal="story-modal">
+        <img class="stories__preview" src="assets/images/stories/stories-1.jpg" alt="">
+        <div class="stories__title">Sunny days</div>
+        <time class="stories__date" datetime="2021-08-10 09:46">10.08.2021</time>
+    </div>
+    <div class="stories__item" data-modal="story-modal">
+        <img class="stories__preview" src="assets/images/stories/stories-2.jpg" alt="">
+        <div class="stories__title">Nothern fleet</div>
+        <time class="stories__date" datetime="2020-09-20 17:37">20.09.2020</time>
+    </div>
+    <div class="stories__item" data-modal="story-modal">
+        <img class="stories__preview" src="assets/images/stories/stories-3.jpg" alt="">
+        <div class="stories__title">New PC</div>
+        <time class="stories__date" datetime="2019-08-01 23:39">01.08.2019</time>
+    </div>
+    <div class="stories__item" data-modal="story-modal">
+        <img class="stories__preview" src="assets/images/stories/stories-4.jpg" alt="">
+        <div class="stories__title">BONES x ADIDAS</div>
+        <time class="stories__date" datetime="2018-08-26 15:30">26.08.2018</time>
+    </div>
+</div><!--/.stories-->
+
+<svg style="display: none">
+   
+    <symbol id="add-file" viewBox="0 0 24 24">
+    <path d="m17.5 24c-3.584 0-6.5-2.916-6.5-6.5s2.916-6.5 6.5-6.5 6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5zm0-11.5c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"/><path d="m17.5 21c-.414 0-.75-.336-.75-.75v-5.5c0-.414.336-.75.75-.75s.75.336.75.75v5.5c0 .414-.336.75-.75.75z"/><path d="m20.25 18.25h-5.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h5.5c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m9.19 21h-6.44c-1.517 0-2.75-1.233-2.75-2.75v-15.5c0-1.517 1.233-2.75 2.75-2.75h11.5c1.517 0 2.75 1.233 2.75 2.75v6.09c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-6.09c0-.689-.561-1.25-1.25-1.25h-11.5c-.689 0-1.25.561-1.25 1.25v15.5c0 .689.561 1.25 1.25 1.25h6.44c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m13.25 9.5h-9.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m9.25 13.5h-5.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h5.5c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m8.25 5.5h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75s-.336.75-.75.75z"/>
+    </symbol>
+    
+</svg>
+
+<div class="add-post">
+    <form class="add-post__form" action="/" method="post">
+        <textarea class="add-post__textarea" name="post-text" id="" placeholder="What's new?" data-autoresize></textarea>
+        <div class="add-post__form-actions">
+            <label class="add-post__file" for="add-post-file">
+                <input type="file" id="add-post-file">
+                    <svg class="add-post__file-icon">
+                            <use xlink:href="#add-file"></use>
+                    </svg>
+            </label>
+            <button class="add-post__send" type="submit">
+                <img src="assets/images/send.svg" alt="Send">
+            </button>
+        </div>
+    </form>
+</div><!--/.add-post-->
+
+<div class="post">
+    <div class="post__content">
+        <p class="post__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facilis repellat fuga ullam est expedita quasi magni exercitationem hic earum possimus, provident quae perferendis, voluptate veniam et modi asperiores libero!
+        </p>
+    </div>
+    <div class="post__footer">
+        <ul class="post__data">
+            <li class="post__data-item">
+                <time datetime="2021-09-27 18:00">27.09.2021</time>
+            </li>
+        </ul>
+    </div>
+</div><!--/.post1-->
+
+<article class="post">
+    <div class="post__header post__header--preview">
+        <a href="post.html">
+            <img class="post__preview" src="assets/images/posts/post-2.jpg" alt="How to write code quickly?">
+        </a>
+    </div>
+    <div class="post__content">
+        <h2 class="post__title">
+            <a href="post.html">How to write code quickly?</a>
+        </h2>
+        <p class="post__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facilis repellat fuga ullam est expedita quasi magni exercitationem hic earum possimus, provident quae perferendis, voluptate veniam et modi asperiores libero!
+        </p>
+    </div>
+    <div class="post__footer">
+        <ul class="post__data">
+            <li class="post__data-item">
+                <time datetime="2021-09-27 18:00">27.09.2021</time>
+            </li>
+            <li class="post__data-item">
+                <a href="post.html">Website Development</a>
+            </li>
+        </ul>
+        <a class="post__read" href="post.html">Read</a>
+    </div>
+</article><!--/.post2-->
+
+<article class="post">
+    <div class="post__header">
+        <div class="embed">
+            <iframe src="https://www.youtube.com/embed/haz4mvGsCaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="post__content">
+        <h2 class="post__title">
+            <a href="post.html">Just bought new notebook</a>
+        </h2>
+    </div>
+    <div class="post__footer">
+        <ul class="post__data">
+            <li class="post__data-item">
+                <time datetime="2021-09-27 18:00">27.09.2021</time>
+            </li>
+            <li class="post__data-item">
+                <a href="post.html">Life Blog</a>
+            </li>
+        </ul>
+        <a class="post__read" href="#">Leave a comment</a>
+    </div>
+</article><!--/.post3-->
+
+<article class="post">
+    <div class="post__header post__header--preview">
+        <a href="post.html">
+            <img class="post__preview" src="assets/images/posts/post-4.jpg" alt="Front-end Conf 2013">
+        </a>
+    </div>
+    <div class="post__content">
+        <h2 class="post__title">
+            <a href="post.html">Front-end Conf 2013</a>
+        </h2>
+        <p class="post__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facilis repellat fuga ullam est expedita quasi magni exercitationem hic earum possimus, provident quae perferendis, voluptate veniam et modi asperiores libero!
+        </p>
+    </div>
+    <div class="post__footer">
+        <ul class="post__data">
+            <li class="post__data-item">
+                <time datetime="2021-09-27 18:00">27.09.2021</time>
+            </li>
+            <li class="post__data-item">
+                <a href="post.html">Website Development</a>
+            </li>
+        </ul>
+        <a class="post__read" href="post.html">Read</a>
+    </div>
+</article><!--/.post4-->
+
+<!--pagination-->
+<ul class="pagination">
+    <li class="pagination__item">
+        <a class="pagination__link" href="#">
+            &lt;
+        </a>
+    </li>
+    <li class="pagination__item">
+        <a class="pagination__link" href="#">
+            1
+        </a>
+    </li>
+    <li class="pagination__item">
+        <a class="pagination__link active" href="#">
+            2
+        </a>
+    </li>
+    <li class="pagination__item">
+        <a class="pagination__link" href="#">
+            3
+        </a>
+    </li>
+    <li class="pagination__item">
+        <a class="pagination__link" href="#">
+            &gt;
+        </a>
+    </li>
+</ul>
