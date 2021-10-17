@@ -29,12 +29,16 @@
         "webpack": "^5.53.0",
         "webpack-stream": "^7.0.0"
     },
+    "scripts": {
+        "deploy": "gh-pages -d dist"
+    },
     "browserslist": [
         "last 1 version",
         "> 1%",
         "IE 10"
     ],
     "dependencies": {
+        "gh-pages": "^3.2.3",
         "gulp-gh-pages": "^0.5.4"
     }
 }
