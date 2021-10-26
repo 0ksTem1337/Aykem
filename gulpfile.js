@@ -2,7 +2,6 @@
 
 const {src, dest} = require("gulp");
 const gulp = require("gulp");
-const ftp = require("vinyl-ftp");
 const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
 const removeComments = require('gulp-strip-css-comments');
@@ -26,26 +25,29 @@ const distPath = 'dist/';
 
 const path = {
     build: {
-        html:   distPath,
-        js:     distPath + "assets/js/",
-        css:    distPath + "assets/css/",
-        images: distPath + "assets/images/",
-        fonts:  distPath + "assets/fonts/"
+        html:           distPath,
+        posts:          distPath + "assets/pages/posts/",
+        js:             distPath + "assets/js/",
+        css:            distPath + "assets/css/",
+        images:         distPath + "assets/images/",
+        fonts:          distPath + "assets/fonts/"
     },
     src: {
-        html:   srcPath + "*.html",
-        js:     srcPath + "assets/js/*.js",
-        css:    srcPath + "assets/scss/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        html:           srcPath + "*.html",
+        posts:          srcPath + "assets/pages/posts/*.html",
+        js:             srcPath + "assets/js/*.js",
+        css:            srcPath + "assets/scss/*.scss",
+        images:         srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:          srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
-        html:   srcPath + "**/*.html",
-        js:     srcPath + "assets/js/**/*.js",
-        css:    srcPath + "assets/scss/**/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
-    },
+        html:           srcPath + "**/*.html",
+        posts:          srcPath + "assets/pages/posts/*.html",
+        js:             srcPath + "assets/js/**/*.js",
+        css:            srcPath + "assets/scss/**/*.scss",
+        images:         srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:          srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    },      
     clean: "./" + distPath
 }
 
@@ -73,6 +75,30 @@ function html(cb) {
             data:       srcPath + 'data/'
         }))
         .pipe(dest(path.build.html))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
+function posts(cb) {
+    return src(path.src.posts, {base: srcPath + "assets/pages/posts/"})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "Posts Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(panini({
+            root:       srcPath + 'assets/pages/posts/',
+            layouts:    '../../../layouts/',
+            partials:   '../../../partials/',
+            helpers:    '../../../helpers/',
+            data:       '../../../data/'
+        }))
+        .pipe(dest(path.build.posts))
         .pipe(browserSync.reload({stream: true}));
 
     cb();
@@ -218,19 +244,21 @@ function clean(cb) {
 
 function watchFiles() {
     gulp.watch([path.watch.html], html);
+    gulp.watch([path.watch.posts], posts);
     gulp.watch([path.watch.css], cssWatch);
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, posts, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
 
 /* Exports Tasks */
 exports.html = html;
+exports.posts = posts;
 exports.css = css;
 exports.js = js;
 exports.images = images;
@@ -239,36 +267,3 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
-
-
-/* HOST */
-//all site upload
-gulp.task('deploy-site', function() {
-    var conn = ftp.create ({
-        host: '11.111.111.111', //or domain
-        user: 'user ftp',
-        password: 'password ftp',
-        parallel: 10,
-        log: gutil.log
-    });
-    var globs = [
-        'src/**', //src to complete site for host
-    ];
-    return gulp.src(globs, {buffer: false})
-    .pipe(conn.dest('/www/domain.com/')); //src to folder on hosting
-});
-//partial upload
-gulp.task('deploy-theme', function() {
-    var conn = ftp.create ({
-        host: '11.111.111.111', //or domain
-        user: 'user ftp',
-        password: 'password ftp',
-        parallel: 10,
-        log: gutil.log
-    }); 
-    var globs = [
-        'src/wp-content/themes/twentyseventeen/**', //src to partial site for host
-    ];
-    return gulp.src(globs, {buffer: false})
-    .pipe(conn.dest('/www/domain.com/wp-content/themes/twentyseventeen')); //src to folder on hosting
-})

@@ -6,6 +6,11 @@
     box-shadow: 0 1.5rem 2.5rem rgba($black, .35);
     border-radius: 5px;
     
+    &--opened {
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+
     @include breakpoint($mobile-bp) {
         padding: 1.5rem;
     }
@@ -31,7 +36,7 @@
 
 .post__title {
     margin-bottom: 1.5rem;
-    font-height: 1.4em;
+    font-weight: 1.4em;
     font-size: 1.8rem;
     color: $white;
     font-weight: 500;

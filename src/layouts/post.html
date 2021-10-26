@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{> head }}
+    {{> head-post }}
 </head>
 <body class=""><!--<.show-sidebar / .no-scroll>(default.html)-->
     <div class="page" id="page">
-        {{> header }}
-        {{> sidebar }}
-        <main class="main">
-            <div class="container">
+        {{> header-post }}
+        {{> sidebar-post }}
+        <main class="main main--post">
+            <div class="container container--post">
             {{> body }}
             </div>
         </main>
@@ -16,6 +16,6 @@
     {{> story-modal }}
     {{> contact-modal }}
     {{> share-modal }}
-    <script src="assets/js/app.js"></script>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

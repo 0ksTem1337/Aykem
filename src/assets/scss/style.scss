@@ -20,6 +20,7 @@ body {
     @include breakpoint($tablet-bp) {
         &.show-sidebar {
             overflow: hidden;
+            display: block;
         }
     }
 }

@@ -8,6 +8,10 @@
     right: 0;
     z-index: $z-index-header;
     
+    &--post {
+        width: 100%;
+    }
+
     @include breakpoint($tablet-bp) {
         width: 100%;
     }
