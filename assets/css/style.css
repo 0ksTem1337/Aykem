@@ -379,6 +379,7 @@ body.no-scroll {
 @media screen and (max-width: 991px) {
     body.show-sidebar {
         overflow: hidden;
+        display: block;
     }
 }
 
@@ -446,6 +447,10 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.sidebar--post {
+    display: none;
 }
 
 @media screen and (max-width: 991px) {
@@ -519,6 +524,10 @@ a:hover {
     top: 0;
     right: 0;
     z-index: 1000;
+}
+
+.header--post {
+    width: 100%;
 }
 
 @media screen and (max-width: 991px) {
@@ -679,11 +688,16 @@ a:hover {
 .nav__link {
     display: block;
     padding: 1.25rem;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.2;
     text-transform: uppercase;
     color: #fff;
     transition: background-color 0.3s linear;
+}
+
+.nav__link--post {
+    font-size: 1.4rem;
+    padding: 1.6rem;
 }
 
 .nav__link.has-subnav {
@@ -715,7 +729,7 @@ a:hover {
 .subnav {
     display: none;
     padding: 0.5rem 0;
-    width: 20rem;
+    width: 24rem;
     text-transform: uppercase;
     background-color: #9b59b6;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -723,6 +737,10 @@ a:hover {
     position: absolute;
     top: 100%;
     left: 0;
+}
+
+.subnav--post {
+    width: 24rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -738,9 +756,14 @@ a:hover {
 .subnav__link {
     display: block;
     padding: 0.45rem 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #fff;
     transition: background-color 0.3s ease-in-out;
+}
+
+.subnav__link--post {
+    font-size: 1.4rem;
+    padding: 0.45rem 1.2rem;
 }
 
 .subnav__link:hover {
@@ -813,6 +836,10 @@ a:hover {
     padding: 10rem 0 8rem 300px;
 }
 
+.main--post {
+    padding: 10rem 0 8rem;
+}
+
 @media screen and (max-width: 991px) {
     .main {
         padding: 7rem 0 5rem;
@@ -824,6 +851,10 @@ a:hover {
     margin: 0 auto;
     padding-left: 5rem;
     padding-right: 5rem;
+}
+
+.container--post {
+    max-width: 1000px;
 }
 
 @media screen and (max-width: 575px) {
@@ -1266,7 +1297,7 @@ a:hover {
 
 .post__title {
     margin-bottom: 1.5rem;
-    font-height: 1.4em;
+    font-weight: 1.4em;
     font-size: 1.8rem;
     color: #fff;
     font-weight: 500;
@@ -1538,7 +1569,7 @@ a:hover {
 
 .post__title {
     margin-bottom: 1.5rem;
-    font-height: 1.4em;
+    font-weight: 1.4em;
     font-size: 1.8rem;
     color: #fff;
     font-weight: 500;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="../../../assets/css/style.min.css">
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,32 +16,32 @@
 </head>
 <body class=""><!--<.show-sidebar / .no-scroll>(default.html)-->
     <div class="page" id="page">
-        <header class="header">
+        <header class="header header--post">
             <div class="header__left">
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a class="nav__link" href="index.html">Home</a>
+                            <a class="nav__link nav__link--post" href="../../../index.html">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link has-subnav" href="#">News</a>
-                            <ul class="subnav">
+                            <a class="nav__link nav__link--post has-subnav" href="#">News</a>
+                            <ul class="subnav subnav--post">
                                 <li>
-                                    <a class="subnav__link" href="#">Discord Server UPD notes</a>
+                                    <a class="subnav__link subnav__link--post" href="#">Discord Server UPD notes</a>
                                 </li>
                                 <li>
-                                    <a class="subnav__link" href="#">SMTH1</a>
+                                    <a class="subnav__link subnav__link--post" href="#">SMTH1</a>
                                 </li>
                                 <li>
-                                    <a class="subnav__link" href="#">SMTH2</a>
+                                    <a class="subnav__link subnav__link--post" href="#">SMTH2</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="text.html">Aykem</a>
+                            <a class="nav__link nav__link--post" href="../../../aykem.html">Aykem</a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="#">Join</a>
+                            <a class="nav__link nav__link--post" href="#">Join</a>
                         </li>
                     </ul>
                 </nav>
@@ -53,25 +53,25 @@
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item nav__item--mint">
-                            <a class="nav__link" href="profile.html">Profile</a>
+                            <a class="nav__link nav__link--post" href="../../../profile.html">Profile</a>
                         </li>
                         <li class="nav__item nav__item--mint">
-                            <a class="nav__link" href="login.html">Sign-out</a>
+                            <a class="nav__link nav__link--post" href="../../../login.html">Sign-out</a>
                         </li>
                     </ul>
                 </nav>
-                <form class="search" action="search.html" method="get">
+                <form class="search" action="../../../search.html" method="get">
                     <input class="search__input" type="text" placeholder="Search">
                 </form>
             </div>
         </header>
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar sidebar--post" id="sidebar">
             <div class="sidebar__header">
-                <img src="assets/images/sidebar-header.jpg" alt="">
+                <img src="../../images/sidebar-header.jpg" alt="">
             </div>
             <div class="sidebar__content">
                 <div class="profile">
-                    <img class="profile__avatar" src="assets/images/profile-pic.jpg" alt="0ksTem">
+                    <img class="profile__avatar" src="../../images/profile-pic.jpg" alt="0ksTem">
                     <div class="profile__header">
                     <div class="profile__name">0ksTem</div>
                     <div class="profile__prof">Web Developer</div>
@@ -160,15 +160,15 @@
                 <a class="btn btn--mint" href="works.html">My works</a>
                 <button class="btn btn--purple" type="button" data-modal="contact-modal">Write me</button>
             </div>
-        </aside>        <main class="main">
-            <div class="container">
+        </aside>        <main class="main main--post">
+            <div class="container container--post">
             
-            <article class="post">
+            <article class="post post--opened">
                 <div class="post__actions">
-                    <a href="index.html">Back</a>
+                    <a href="../../../index.html">Back</a>
                     <a href="#">
                         Share
-                        <img class="post__actions-icon" src="assets/images/share.svg" alt="share">
+                        <img class="post__actions-icon" src="../../images/share.svg" alt="share">
                     </a>
                 </div>
                 <div class="post__header post__header--opened">
@@ -193,7 +193,7 @@
                         <h4>H4 Title</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facilis repellat fuga ullam est expedita quasi magni exercitationem hic earum possimus, provident quae perferendis, voluptate veniam et modi asperiores libero!</p>
                         <p>
-                            <img src="assets/images/posts/post-2-inside-1.jpg" alt="Website Development">
+                            <img src="../../images/posts/post-2-inside-1.jpg" alt="Website Development">
                         </p>
                         <ul>
                             <li>item</li>
@@ -247,7 +247,7 @@
                             </li>
                         </ul>
                     </div><!--/.post__related-->
-                    <h3 class="post__subtitle post__subtitle--mt3rem">Discussion</h3>    
+                    <!-- <h3 class="post__subtitle post__subtitle--mt3rem">Discussion</h3>    
                     <form action="/" method="post">
                         <div class="form__group">
                             <textarea class="form__control form__control--textarea" name="comment-text" placeholder="Write something..." data-autoresize></textarea>
@@ -258,7 +258,7 @@
                     <ul class="comments">
                         <li class="comments__item">
                             <div class="comments__header">
-                                <img class="comments__avatar" src="assets/images/share.svg" alt="">
+                                <img class="comments__avatar" src="../../images/share.svg" alt="">
                                 <div class="comments__author">
                                     <div class="comments__name">0ksTem</div>
                                     <time class="comments__pubdate" datetime="2021-09-27 18:30">5 days ago</time>
@@ -269,7 +269,7 @@
                             <ul class="comments">
                                 <li class="comments__item">
                                     <div class="comments__header">
-                                        <img class="comments__avatar" src="assets/images/share.svg" alt="">
+                                        <img class="comments__avatar" src="../../images/share.svg" alt="">
                                         <div class="comments__author">
                                             <div class="comments__name">0ksTem</div>
                                             <time class="comments__pubdate" datetime="2021-09-27 18:30">5 days ago</time>
@@ -284,7 +284,7 @@
                     <ul class="comments">
                         <li class="comments__item">
                             <div class="comments__header">
-                                <img class="comments__avatar" src="assets/images/share.svg" alt="">
+                                <img class="comments__avatar" src="../../images/share.svg" alt="">
                                 <div class="comments__author">
                                     <div class="comments__name">0ksTem</div>
                                     <time class="comments__pubdate" datetime="2021-09-27 18:30">5 days ago</time>
@@ -293,7 +293,7 @@
                             <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facilis repellat fuga ullam est expedita quasi magni exercitationem hic earum possimus, provident quae perferendis, voluptate veniam et modi asperiores libero!</div>
                             <button class="comments__reply" type="button">Reply</button>
                         </li>
-                    </ul>
+                    </ul> -->
                     </div><!--/.post__content-->
             </article><!--/.post-->
             </div>
@@ -301,7 +301,7 @@
     </div>
     <div class="modal" id="story-modal">
        <div class="modal__content modal__content--story">
-            <video class="modal__video" src="" poster="http://placehold.it/420x580"></video>
+            <video class="modal__video" src="" poster="assets/images/stories/stories-1.jpg"></video>
         </div>
     </div><!--/.modal-->    <div class="modal" id="contact-modal">
         <div class="modal__content modal__content--contact">
@@ -394,6 +394,6 @@
                     </li>
                 </ul>
         </div><!--/.modal__content-->
-    </div><!--/.modal-->    <script src="assets/js/app.js"></script>
+    </div><!--/.modal-->    <script src="../../js/app.js"></script>
 </body>
 </html>
