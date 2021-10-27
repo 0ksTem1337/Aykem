@@ -77,6 +77,10 @@
 .post__description {
     font-size: 1.4rem;
     color: #D2D2D2;
+
+    a {
+        color: $mint;
+    }
 }
 
 .post__text {

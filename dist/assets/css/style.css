@@ -837,7 +837,7 @@ a:hover {
 }
 
 .main--post {
-    padding: 10rem 0 8rem;
+    padding: 5rem 0 8rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -1271,6 +1271,11 @@ a:hover {
     border-radius: 5px;
 }
 
+.post--opened {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
 @media screen and (max-width: 575px) {
     .post {
         padding: 1.5rem;
@@ -1541,6 +1546,11 @@ a:hover {
     background-color: #202020;
     box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.35);
     border-radius: 5px;
+}
+
+.post--opened {
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
 @media screen and (max-width: 575px) {
