@@ -635,15 +635,15 @@ a:hover {
 .nav__link {
   display: block;
   padding: 1.25rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.2;
   text-transform: uppercase;
   color: #fff;
   transition: background-color 0.3s linear;
 }
 .nav__link--post {
-  font-size: 1.4rem;
-  padding: 1.6rem;
+  font-size: 1.2rem;
+  padding: 1.25rem;
 }
 .nav__link.has-subnav {
   position: relative;
@@ -1183,6 +1183,9 @@ a:hover {
   font-size: 1.4rem;
   color: #D2D2D2;
 }
+.post__description a {
+  color: #16a085;
+}
 
 .post__text {
   padding-bottom: 1rem;
@@ -1422,6 +1425,9 @@ a:hover {
 .post__description {
   font-size: 1.4rem;
   color: #D2D2D2;
+}
+.post__description a {
+  color: #16a085;
 }
 
 .post__text {
