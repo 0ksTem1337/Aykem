@@ -27,6 +27,7 @@ const path = {
     build: {
         html:           distPath,
         posts:          distPath + "assets/pages/posts/",
+        news:           distPath + "assets/pages/news/",
         js:             distPath + "assets/js/",
         css:            distPath + "assets/css/",
         images:         distPath + "assets/images/",
@@ -35,6 +36,7 @@ const path = {
     src: {
         html:           srcPath + "*.html",
         posts:          srcPath + "assets/pages/posts/*.html",
+        news:           srcPath + "assets/pages/news/*.html",
         js:             srcPath + "assets/js/*.js",
         css:            srcPath + "assets/scss/*.scss",
         images:         srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
@@ -43,6 +45,7 @@ const path = {
     watch: {
         html:           srcPath + "**/*.html",
         posts:          srcPath + "assets/pages/posts/*.html",
+        news:           srcPath + "assets/pages/news/*.html",
         js:             srcPath + "assets/js/**/*.js",
         css:            srcPath + "assets/scss/**/*.scss",
         images:         srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
@@ -99,6 +102,30 @@ function posts(cb) {
             data:       '../../../data/'
         }))
         .pipe(dest(path.build.posts))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
+function news(cb) {
+    return src(path.src.news, {base: srcPath + "assets/pages/news/"})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "News Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(panini({
+            root:       srcPath + 'assets/pages/news/',
+            layouts:    '../../../layouts/',
+            partials:   '../../../partials/',
+            helpers:    '../../../helpers/',
+            data:       '../../../data/'
+        }))
+        .pipe(dest(path.build.news))
         .pipe(browserSync.reload({stream: true}));
 
     cb();
@@ -245,13 +272,14 @@ function clean(cb) {
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.posts], posts);
+    gulp.watch([path.watch.news], news);
     gulp.watch([path.watch.css], cssWatch);
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, posts, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, posts, news, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -259,6 +287,7 @@ const watch = gulp.parallel(build, watchFiles, serve);
 /* Exports Tasks */
 exports.html = html;
 exports.posts = posts;
+exports.news = news;
 exports.css = css;
 exports.js = js;
 exports.images = images;
