@@ -1,13 +1,16 @@
 const burger = document.getElementById('sidebarToggle');
 const sidebar = document.getElementById('sidebar');
+const sidebarPages = document.getElementById('sidebarPages');
 const page = document.getElementById('page');
 const body = document.body;
 
 burger.addEventListener('click', event => {
     if(body.classList.contains('show-sidebar') ) {
         closeSidebar();
+        closeSidebarPages();
     } else {
         showSidebar();
+        showSidebarPages();
     }
 });
 
@@ -19,7 +22,20 @@ function showSidebar() {
     body.classList.add('show-sidebar');
 }
 
+function showSidebarPages() {
+    let mask = document.createElement('div');
+    mask.classList.add('page__mask');
+    mask.addEventListener('click', closeSidebarPages);
+    page.appendChild(mask);
+    body.classList.add('show-sidebar');
+}
+
 function closeSidebar() {
+    body.classList.remove('show-sidebar');
+    document.querySelector('.page__mask').remove();
+}
+
+function closeSidebarPages() {
     body.classList.remove('show-sidebar');
     document.querySelector('.page__mask').remove();
 }
